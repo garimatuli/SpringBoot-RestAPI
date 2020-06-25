@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
+		<artifactId>spring-boot-starter-parent</artifactId> <!-- Maven users can inherit from spring-boot-starter-parent project to obtain sensible defaults.-->
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -19,12 +19,19 @@
 		<java.version>11</java.version>
 	</properties>
 
+<!-- Spring boot starter is a jar file which internally resolves and download all the associated dependencies and add to the application,
+ thus providing a Rapid Application Development. Spring boot starter follows the unified pattern,
+ like every dependency start with spring-boot-starter-X, where X will be the name of dependencies. -->
+
 	<dependencies>
+
+		<!-- Present by default ; Support for full-stack web development, including Tomcat and spring-webmvc. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Present by default ; Import Spring Boot’s default HTTP engine (Tomcat) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -38,6 +45,7 @@
 		</dependency>
 
 		<!-- adding dependency externally for jpa so as to use repository -->
+		<!-- The spring-boot-starter-data-jpa is a starter for using Spring Data JPA with Hibernate.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

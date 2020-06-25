@@ -2,6 +2,9 @@ package com.springtrial.demo.entity;
 
 import javax.persistence.*;
 
+/* @Entity is a JPA annotation to make this object ready for storage in a JPA-based data store.
+ * @Id indicate a column as the primary key and automatically populated by the JPA provider.
+ */
 @Entity
 public class Application {
 
