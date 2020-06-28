@@ -53,6 +53,20 @@ public class ReleaseController {
         }
         return new ResponseEntity<String>("{\"Response\":\"No record exists with this id\"}", HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping("/deleteAllReleases")
+    @ResponseStatus(code = HttpStatus.OK,value = HttpStatus.OK, reason = "Successfully deleted all releases")
+    public String deleteAllReleases(){
+        releaseService.deleteAllReleases();
+        return "Successfully deleted all entities";
+    }
+
+    @DeleteMapping("/deleteSomeReleases")
+    public ResponseEntity<String> deleteSomeReleases(@RequestBody List<Release> releases){
+        releaseService.deleteSomeReleases(releases);
+        return new ResponseEntity<>("{\"Msg\":\"Successfully deleted all entities which has been passed as request data\"}",HttpStatus.OK);
+    }
+
 }
 
 // Comments

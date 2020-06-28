@@ -6,9 +6,10 @@ import java.util.Optional;
 public interface ApplicationService {
     List<Application> getApplications();
     Optional<Application> getApplicationById(Long id);
-    void postApplications(List<Application> applications);
+    String postApplications(List<Application> applications);
     boolean updateApplication(Long appId,Application appObj);
     boolean deleteApplication(Long appId);
+    void deleteApplicationsByName(String appName); //Delete application by application name
 }
 
 // https://www.javaguides.net/2019/07/spring-boot-save-findbyid-findall.html

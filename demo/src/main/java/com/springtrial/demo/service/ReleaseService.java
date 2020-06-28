@@ -10,6 +10,8 @@ public interface ReleaseService {
      Optional<Release> getReleaseById(Long releaseId);
      void saveRelease(List<Release> releases);
      boolean updateReleaseById(Long releaseId, Release releaseObj);
+     void deleteAllReleases(); // delete all releases
+     void deleteSomeReleases(List<Release> releases); // delete releases passed as request data in the request body
 }
 
 // findAll() will return a list of releases

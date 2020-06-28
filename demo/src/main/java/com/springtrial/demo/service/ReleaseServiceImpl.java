@@ -40,4 +40,15 @@ public class ReleaseServiceImpl implements ReleaseService {
         }
         return false;
     }
+
+    @Override
+    public void deleteAllReleases(){
+        releaseRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteSomeReleases(List<Release> releases){
+        releaseRepository.deleteAll(releases);
+    }
+
 }

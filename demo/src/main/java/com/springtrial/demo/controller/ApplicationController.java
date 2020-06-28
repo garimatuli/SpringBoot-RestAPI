@@ -38,7 +38,7 @@ public class ApplicationController {
     }
 
     @PostMapping(value = "/addApplications",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(code = HttpStatus.CREATED, value = HttpStatus.CREATED, reason = "Successfully added applications")
     public void postApplication(@Validated @RequestBody List<Application> applications){
         applicationService.postApplications(applications);
     }
@@ -59,6 +59,13 @@ public class ApplicationController {
             return new ResponseEntity<>("{\"Msg\":\"Successfully Deleted Record\"}",HttpStatus.OK);
         else
             return new ResponseEntity<>("{\"Msg\":\"Record not found\"}",HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping("/deleteAppByName/{appName}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public @ResponseBody String deleteApplicationByName(@PathVariable(name = "appName") String appName){
+        applicationService.deleteApplicationsByName(appName);
+        return "Record Deleted Successfully";
     }
 }
 

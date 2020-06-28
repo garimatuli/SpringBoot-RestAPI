@@ -33,8 +33,15 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void postApplications(List<Application> applications){
+    public String postApplications(List<Application> applications){
+        for (Application application: applications) {
+            // checking if any app name already exists in database, if it does then don't insert any record
+            Application existingApp = applicationRepository.checkAppName(application.getAppName());
+            if (existingApp != null)
+                return "App NAme already Exists";
+        }
         applicationRepository.saveAll(applications);
+        return "Records successfully added";
     }
 
     @Override
@@ -61,6 +68,11 @@ public class ApplicationServiceImpl implements ApplicationService {
             applicationRepository.delete(foundApplication);
         }
         return check;
+    }
+
+    @Override
+    public void deleteApplicationsByName(String appName){
+        applicationRepository.deleteAppsByName(appName);
     }
 }
 
