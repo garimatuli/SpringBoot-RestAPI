@@ -1,10 +1,19 @@
-
-// This class which contains @SpringBootApplication annotation and has the main method is the entry point of spring boot application
-
 package com.springtrial.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+// This class which contains @SpringBootApplication annotation and has the main method is the entry point of spring boot application
+
+@SpringBootApplication
+public class DemoApplication {
+
+	// The main() method uses Spring Boot’s SpringApplication.run() method to launch an application.
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
+}
 
 /* @SpringBootApplication annotation is used to mark a configuration class
  * that declares one or more @Bean methods and also triggers auto-configuration and component scanning.
@@ -24,13 +33,3 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * whereas @SpringBootApplication  is equivalent to three annotations, so it does configurations as well as component scanning./
  */
-
-@SpringBootApplication
-public class DemoApplication {
-
-	// The main() method uses Spring Boot’s SpringApplication.run() method to launch an application.
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
-
-}

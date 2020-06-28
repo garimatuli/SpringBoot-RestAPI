@@ -3,6 +3,9 @@ package com.springtrial.demo.entity;
 import javax.persistence.*;
 import java.util.Date;
 
+/* local variable names here are those which will become Object properties of the JSON object sent over Http
+ * we map column names of database table with the local variable names in Entity Class
+ */
 @Entity
 public class Release {
     @Id
@@ -49,9 +52,5 @@ public class Release {
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
-
-
-
-
 
 }
