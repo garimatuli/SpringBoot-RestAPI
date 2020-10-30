@@ -25,3 +25,10 @@ INSERT INTO developers (developer_Id, developer_Name) VALUES (1,'Garima Tuli');
 INSERT INTO developers (developer_Id, developer_Name) VALUES (2,'Ginni');
 INSERT INTO developers (developer_Id, developer_Name) VALUES (3,'Ankur');
 INSERT INTO developers (developer_Id, developer_Name) VALUES (4,'Abhinav');
+
+
+- Try url http://localhost:8080/ to get the app_version_details as a JSON payload:
+{
+    "updated-by": "Garima",
+    "app-version": "1.0.0"
+}
