@@ -16,7 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 <!-- Spring boot starter is a jar file which internally resolves and download all the associated dependencies and add to the application,

@@ -38,7 +38,7 @@ public class ApplicationServiceImpl implements ApplicationService {
             // checking if any app name already exists in database, if it does then don't insert any record
             Application existingApp = applicationRepository.checkAppName(application.getAppName());
             if (existingApp != null)
-                return "App NAme already Exists";
+                return "App Name already Exists";
         }
         applicationRepository.saveAll(applications);
         return "Records successfully added";

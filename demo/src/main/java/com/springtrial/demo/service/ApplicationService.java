@@ -18,6 +18,6 @@ public interface ApplicationService {
 
 /* Optional<T> is a container object which may or may not contain a non-null value.
  * If a value is present, isPresent() returns true and get() returns the value.
- * The ifPresent() invokes the specified method if the value is present; otherwise nothing is done.
- * It saves us from nul pointer exception in case there is no such id present in the database.
+ * The isPresent() invokes the specified method if the value is present; otherwise nothing is done.
+ * It saves us from null pointer exception in case there is no such id present in the database.
  */
