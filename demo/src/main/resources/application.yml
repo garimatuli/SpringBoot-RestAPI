@@ -1,0 +1,9 @@
+# to change default server port 8080
+#server:
+#  port: 5000
+
+# custom property which can be used in the application
+# on every release, we could update the developers name who last updated the app in a particular release
+# need to create a controller to actually spit out the property when the home of the application is called.
+version:
+  updatedBy: Garima
